@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
 // Crear servidor HTTP (Render maneja HTTPS)
-const server = http.createServer(app);
+const server = http.createServer(app);''
 
 // Configuración del servidor WebSocket
 const wss = new WebSocket.Server({ noServer: true });
@@ -149,5 +149,5 @@ app.post('/send-image', upload.single('image'), async (req, res) => {
 // Iniciar el servidor con el puerto de Render
 const port = process.env.PORT || 5001;
 server.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+  console.log(`Servidor escuchando en https://whatsappapis.onrender.com/:${port}`);
 });
